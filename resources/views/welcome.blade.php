@@ -6,7 +6,7 @@
     @vite(['resources/js/app.js', 'resources/js/main.js'])
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>ALI KEBAB KWIDZYN, TUTAJ SMACZNIE ZJESZ! SERDECZNIE ZAPRASZAMY! WIOLETA GAJEWSKA, TELEFON:782-166-506</title>
+    <title>ALI KEBAB GNIEW, TUTAJ SMACZNIE ZJESZ! SERDECZNIE ZAPRASZAMY! WIOLETA GAJEWSKA, TELEFON:721-492-185</title>
     <meta name="description" content="Tylko świeże produkty, stawiamy na jakość, najlepszy kebab w Kwidzynie, pyszne jedzenie i miła obsługa,
     zapraszamy do skorzystania z naszych usług, jesteśmy dla Ciebie!">
     <meta name="keywords"  content="kebab, kwidzyn, menu, najlepszy kebab, dobre jedzenie">
@@ -26,14 +26,14 @@
     <div class="container d-flex justify-content-center justify-content-md-between">
 
         <div class="contact-info d-flex align-items-center">
-            <i class="bi bi-phone d-flex align-items-center"><span>+48 782 166 506</span></i>
-            <i class="bi bi-clock d-flex align-items-center ms-4"><span> Pn-Sob: 11:00 - 21:00</span></i>
+            <i class="bi bi-phone d-flex align-items-center"><span>+48 721 492 185</span></i>
+            <i class="bi bi-clock d-flex align-items-center ms-4"><span> Pn-Sob: 11:00 - 22:00</span></i>
         </div>
 
         <div class="languages d-none d-md-flex align-items-center">
             <ul>
-                <li>Alikebab Kwidzyn</li>
-                <li><a href="#">Alikebab Gniew</a></li>
+                <li>Alikebab Gniew</li>
+                <li><a href="http://alikebabkwidzyn.pl/">Alikebab Kwidzyn</a></li>
             </ul>
         </div>
     </div>
@@ -43,7 +43,7 @@
 <header id="header" class="fixed-top d-flex align-items-cente">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
-        <h1 class="logo me-auto me-lg-0"><a href="/">Ali Kebab Kwidzyn</a></h1>
+        <h1 class="logo me-auto me-lg-0"><a href="#">Ali Kebab Gniew</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -54,7 +54,7 @@
                 <li><a class="nav-link scrollto" href="#menu">Menu</a></li>
                 <li><a class="nav-link scrollto" href="#gallery">Zdjęcia</a></li>
                 <li><a class="nav-link scrollto" href="#contact">Kontakt</a></li>
-                <li><a class="nav-link scrollto d-md-none" href="#">Alikebab Gniew</a></li>
+                <li><a class="nav-link scrollto d-md-none" href="http://alikebabkwidzyn.pl/">Alikebab Kwidzyn</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -167,7 +167,7 @@
             </div>
 
             <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
-                @foreach($products as $product)
+                @foreach($productsgniew as $product)
                     <div class="col-lg-6 menu-item filter-specialty">
                         <img src="{{ asset('storage/' . $product->image_path)}}" class="menu-img" alt="">
                         <div class="menu-content">
@@ -249,7 +249,7 @@
         </div>
 
         <div data-aos="fade-up">
-            <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2360.045146640535!2d18.92461671585314!3d53.735270680062335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x28e035a16ccdc163!2sAli%20Kebab%20Kwidzyn!5e0!3m2!1spl!2spl!4v1661892074962!5m2!1spl!2spl"  allowfullscreen></iframe>
+            <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2354.460832329773!2d18.82232961582579!3d53.83466708008425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4702a51aeadbebe7%3A0x61b124714d644a10!2sALI%20Kebab%20pizza%20Gniew!5e0!3m2!1spl!2spl!4v1662973629801!5m2!1spl!2spl"  allowfullscreen></iframe>
         </div>
 
         <div class="container" data-aos="fade-up">
@@ -261,7 +261,7 @@
                         <div class="address">
                             <i class="bi bi-geo-alt"></i>
                             <h4>Lokalizacja:</h4>
-                            <p>Tęczowa 1F, Kwidzyn, 82-500</p>
+                            <p>Plac Grunwaldzki 14, 83-140 Gniew</p>
                         </div>
 
                         <div class="open-hours">
@@ -269,7 +269,7 @@
                             <h4>Godziny otwarcia:</h4>
                             <p>
                                Poniedziałek-Sobota:<br>
-                                11:00 - 21:00 <br>
+                                11:00 - 22:00 <br>
                                 Niedziela: <br>
                                 12:00 - 21:00
                             </p>
@@ -284,7 +284,7 @@
                         <div class="phone">
                             <i class="bi bi-phone"></i>
                             <h4>Telefon:</h4>
-                            <p>+48 782 166 506</p>
+                            <p>+48 721 492 185</p>
                         </div>
 
                     </div>
@@ -305,15 +305,15 @@
 
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-info">
-                        <h3>Ali Kebab Kwidzyn</h3>
+                        <h3>Ali Kebab Gniew</h3>
                         <p>
-                            Tęczowa 1F <br>
-                            82-500, Kwidzyn<br><br>
-                            <strong>Telefon:</strong> +48 782 166 506<br>
+                            Plac Grunwaldzki 14 <br>
+                            83-140, Gniew<br><br>
+                            <strong>Telefon:</strong> +48 721 492 185<br>
                             <strong>Email:</strong> Wioleta.gajewska@wp.pl<br>
                         </p>
                         <div class="social-links mt-3">
-                            <a href="https://www.facebook.com/Kebabali/" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://m.facebook.com/profile.php?id=100083067443837&_rdr" class="facebook"><i class="bx bxl-facebook"></i></a>
                         </div>
                     </div>
                 </div>

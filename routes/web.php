@@ -2,7 +2,7 @@
 
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductGniewController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,5 +24,5 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/', [WelcomeController::class, 'index']);
-Route::resource('products', ProductController::class)->middleware('auth');
+Route::resource('products', ProductGniewController::class)->middleware('auth');
 

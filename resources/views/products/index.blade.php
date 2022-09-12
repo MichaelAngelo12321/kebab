@@ -27,7 +27,7 @@
             <th>Cena</th>
             <th>Akcje</th>
         </tr>
-        @foreach ($products as $product)
+        @foreach ($productsgniew as $product)
             <tr>
                 <td>{{ ++$i }}</td>
                 <td>{{ $product->name }}</td>
@@ -49,6 +49,6 @@
         @endforeach
     </table>
 
-    {!! $products->links() !!}
+    {!! $productsgniew->links() !!}
     </div>
 @endsection

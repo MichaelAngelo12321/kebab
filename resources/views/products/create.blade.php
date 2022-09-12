@@ -51,7 +51,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Zdjęcie:</strong>
-                    <input type="file" name="image" class="form-control" placeholder="Zdjęcie">
+                    <input type="file" name="image_path" class="form-control" placeholder="Zdjęcie">
                 </div>
             </div>
 

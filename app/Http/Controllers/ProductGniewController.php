@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\ProductGniew;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class ProductGniewController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $products = Product::latest()->paginate(50);
+        $productsgniew = ProductGniew::latest()->paginate(50);
 
-        return view('products.index',compact('products'))
+        return view('products.index',compact('productsgniew'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -42,11 +42,12 @@ class ProductController extends Controller
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
+            'image_path' => 'required',   
         ]);
 
-        $product = new Product($request->all());
-        $product->image_path = $request->file('image')->store('products');
-        $product->save();
+        $productgniew = new ProductGniew($request->all());
+        $productgniew->image_path = $request->file('image_path')->store('products');
+        $productgniew->save();
 
         return redirect()->route('products.index')
             ->with('success','Product created successfully.');
@@ -55,10 +56,10 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\ProductGniew  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show(ProductGniew $product)
     {
         return view('products.show',compact('product'));
     }
@@ -66,10 +67,10 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\ProductGniew  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(ProductGniew $product)
     {
         return view('products.edit',compact('product'));
     }
@@ -78,29 +79,35 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\ProductGniew  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, ProductGniew $product)
     {
         $request->validate([
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
+            'image_path' => 'required',
         ]);
 
-        $product->update($request->all());
-
+        $image_path = $request->hidden_image_path;
+        $product = ProductGniew::find($request->hidden_id);
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->image_path = $request->file('image_path')->store('products');
+        $product->save();
         return redirect()->route('products.index')
             ->with('success','Product updated successfully');
     }
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\ProductGniew  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(ProductGniew $product)
     {
         $product->delete();
 

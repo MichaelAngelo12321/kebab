@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductGniew;
 use Illuminate\View\View;
 
 class WelcomeController extends Controller
@@ -15,7 +16,7 @@ class WelcomeController extends Controller
     public function index():View
     {
         return view('welcome', [
-            'products' => Product::paginate(50)
+            'productsgniew' => ProductGniew::paginate(50)
         ]);
 
     }

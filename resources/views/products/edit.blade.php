@@ -24,7 +24,7 @@
         </div>
     @endif
 
-    <form action="{{ route('products.update',$product->id) }}" method="POST">
+    <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -51,11 +51,14 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Zdjęcie:</strong>
-                    <input type="file" name="image_path" value="{{ $product->image_path }}" class="form-control" placeholder="Zdjęcie">
+                    <input type="file" name="image_path" class="form-control" placeholder="Zdjęcie">
+                    <img src="{{ asset('storage/'. $product->image_path )}}" width="100" class="img-thumbnail" alt="zdjęcie">
+                    <input type="hidden" name="hidden_image_path" value="{{ $product->image_path }}">
                 </div>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <input type="hidden" name="hidden_id" value="{{ $product->id }}">
                 <button type="submit" class="btn btn-primary">Edytuj</button>
             </div>
         </div>
